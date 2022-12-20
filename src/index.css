@@ -1,0 +1,120 @@
+#root {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+
+  background-color: white;
+  color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: max-content max-content;
+  row-gap: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  background-color: white;
+  color: black;
+
+  border: 1px solid black;
+  border-radius: 2px;
+
+  display: block;
+  font-size: 12px;
+}
+
+textarea {
+  background-color: white;
+  color: black;
+
+  border: 1px solid black;
+  border-radius: 2px;
+
+  display: block;
+  width: 100%;
+
+  overflow: auto;
+}
+
+button {
+  background-color: white;
+  color: black;
+
+  border: 1px solid black;
+  border-radius: 2px;
+
+  padding: 3px;
+}
+
+button:hover {
+  background-color: #b8b8b8;
+}
+
+select {
+  background-color: white;
+  color: black;
+
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+ul,
+li {
+  display: inline;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  justify-self: center;
+}
+
+li {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.activePage {
+  background-color: black;
+  color: white;
+}
+
+.nav {
+  display: grid;
+  grid-template-rows: 38px auto;
+}
+
+.ui.modal {
+  width: 100%;
+
+  padding-top: 5px;
+
+  background-color: #1d1d1d;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+.loadingToken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}

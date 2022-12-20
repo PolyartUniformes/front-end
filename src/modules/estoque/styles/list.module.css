@@ -1,0 +1,132 @@
+.title {
+  background-color: #1d1d1d;
+  color: white;
+
+  padding: 5px;
+
+  font-weight: bold;
+
+  display: grid;
+  grid-template-columns: auto 30px;
+}
+
+.title button {
+  background-color: transparent;
+  border: none;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.title button:hover {
+  background-color: transparent;
+  color: limegreen;
+  cursor: pointer;
+}
+
+.listBox {
+  padding: 5px;
+}
+
+.listButtons {
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] max-content [col-end]);
+  column-gap: 5px;
+}
+
+.listButtons button {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.searchField {
+  display: grid;
+  grid-template-columns: 80px max-content;
+}
+
+.modalListItem {
+  display: grid;
+  grid-template-columns: 50px auto 67px;
+}
+
+.delivered {
+  background-color: limegreen;
+  border: 1px solid black;
+}
+
+.isLate {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.firstRow {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.firstRow input {
+  width: 100%;
+}
+
+.listedGrid {
+  display: grid;
+  grid-template-columns: 50px 200px 200px auto 80px 50px;
+}
+
+.listedGrid input {
+  border-radius: 0;
+  outline: none;
+}
+
+.listedGrid input:hover {
+  background-color: #ffffa1;
+  cursor: pointer;
+}
+
+.listedGridSelected {
+  display: grid;
+  grid-template-columns: 50px 200px 200px auto 80px 50px;
+}
+
+.listedGridSelected input {
+  background-color: #ffffa1;
+  border-radius: 0;
+  outline: none;
+}
+
+.updateQuantity {
+  background-color: antiquewhite;
+  border: 1px solid black;
+  display: grid;
+  grid-template-rows: max-content max-content;
+  column-gap: 5px;
+  font-weight: bold;
+  justify-content: center;
+  padding: 5px;
+}
+
+.updateInputs {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+}
+
+.updateQuantity button {
+  background-color: limegreen;
+  font-size: 12px;
+}
+
+.updateQuantity button:hover {
+  background-color: lime;
+}
+
+@media screen and (max-width: 900px) {
+  .firstRow {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

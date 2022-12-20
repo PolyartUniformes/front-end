@@ -1,0 +1,268 @@
+.desktopList {
+  display: grid;
+  row-gap: 5px;
+}
+
+.activeItem {
+  background-color: limegreen;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: limegreen;
+  border: 1px solid black;
+}
+
+.modalListItem {
+  display: grid;
+  grid-template-columns: 40px auto 67px;
+}
+
+.modalListItem input {
+  outline: none;
+  border-radius: 0;
+}
+
+.isLate {
+  background-color: red;
+  border: 1px solid black;
+}
+
+.delivered {
+  background-color: limegreen;
+}
+
+.modal {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  row-gap: 5px;
+}
+
+.modalContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+
+  padding: 5px;
+
+  background-color: #c7c7c7;
+}
+
+.modalImage {
+  width: 100%;
+}
+
+.modalActions {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  column-gap: 5px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modalActionsButton {
+  background-color: #8e8000;
+  border: 1px solid #383200;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.modalActionsButton a {
+  color: white;
+  text-decoration: none;
+}
+
+.modalActionsButton:hover {
+  background-color: gold;
+  color: black;
+}
+
+.modalActionsSaveButton {
+  background-color: #006200;
+  border: 1px solid #003b05;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.modalActionsSaveButton:hover {
+  background-color: limegreen;
+}
+
+.modalActionsCancelButton {
+  background-color: #790000;
+  border: 1px solid #450000;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.modalActionsCancelButton:hover {
+  background-color: red;
+}
+
+.modalActionsOptionButton {
+  background-color: #6d7900;
+  border: 1px solid #3d4500;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.modalActionsOptionButton:hover {
+  background-color: #bbc800;
+}
+
+.modalActionsQuitButton {
+  background-color: #790000;
+
+  border: 1px solid #450000;
+  border-radius: 5px;
+
+  padding: 5px;
+
+  color: white;
+
+  width: max-content;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.modalActionsQuitButton:hover {
+  background-color: red;
+}
+
+.delete {
+  background-color: #790000;
+  border: 1px solid #450000;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+
+.delete:hover {
+  background-color: red;
+}
+
+.restore {
+  background-color: #006200;
+  border: 1px solid #003b05;
+}
+
+.restore:hover {
+  background-color: limegreen;
+}
+
+.modalLines {
+  display: grid;
+  row-gap: 5px;
+  height: fit-content;
+}
+
+.modalLines input {
+  width: 100%;
+}
+
+.modalLineOfInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.modalLineOfInputs select {
+  display: block;
+  width: 100%;
+}
+
+.modalLineOfTissues {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.modalLastRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.sizesGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  row-gap: 5px;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+.editOptions {
+  position: absolute;
+  left: 25%;
+  right: 25%;
+
+  background-color: #000000ea;
+  color: white;
+
+  padding: 10px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  border-radius: 10px;
+  border: 1px solid #5a5a5a;
+
+  text-align: center;
+
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+  row-gap: 10px;
+}
+
+.editOptions select {
+  width: 200px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .modalContent {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .modalLineOfInputs {
+    grid-template-columns: 1fr;
+  }
+
+  .modalLineOfTissues {
+    grid-template-columns: 1fr;
+  }
+
+  .modalLastRow {
+    grid-template-columns: 1fr;
+  }
+
+  .sizesGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .delete {
+    background-color: #8c0000;
+    border: 1px solid red;
+  }
+
+  .editOptions {
+    left: 10px;
+    right: 10px;
+  }
+}

@@ -1,0 +1,29 @@
+.container {
+  padding-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, [col-start] max-content [col-end]);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.box {
+  background-color: #c7c7c7;
+  height: fit-content;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, [col-start] 100% [col-end]);
+    padding: 10px;
+    width: 100%;
+  }
+
+  .subContainer {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+}

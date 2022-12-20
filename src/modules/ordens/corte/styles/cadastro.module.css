@@ -1,0 +1,234 @@
+.title {
+  background-color: #1d1d1d;
+  color: white;
+
+  padding: 5px;
+
+  font-weight: bold;
+
+  display: grid;
+  grid-template-columns: auto 30px;
+}
+
+.container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 49%);
+  grid-template-rows: repeat(2, [col-start] max-content [col-end]);
+
+  column-gap: 10px;
+  row-gap: 10px;
+
+  justify-content: center;
+}
+
+.container .box {
+  border-radius: 10px;
+
+  background-color: rgb(211, 211, 211);
+}
+
+.managementTitle {
+  background-color: #414141;
+  color: white;
+
+  padding: 5px;
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  font-weight: bold;
+  text-align: center;
+}
+
+.managementBox {
+  padding: 5px;
+
+  display: grid;
+
+  row-gap: 5px;
+}
+
+.managementBox select {
+  display: block;
+  width: 100%;
+}
+
+.managementBox input {
+  width: 100%;
+
+  margin-left: 0;
+}
+
+.managementoptions {
+  display: grid;
+  grid-template-columns: max-content max-content;
+
+  column-gap: 5px;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+
+  column-gap: 5px;
+}
+
+.saveButton {
+  display: grid;
+  grid-template-rows: max-content max-content;
+
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+.selectSize {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  row-gap: 10px;
+
+  margin-top: 10px;
+
+  padding: 5px;
+
+  border-radius: 5px;
+
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.saveButton button {
+  background-color: #1f911f;
+
+  border-radius: 5px;
+  border: none;
+
+  padding: 5px;
+}
+
+.saveButton button:hover {
+  background-color: limegreen;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(4, [col-start] max-content [col-end]);
+  column-gap: 5px;
+}
+
+.ordersFirstGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.ordersSecondGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 5px;
+  row-gap: 5px;
+}
+
+.sizesGrid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  row-gap: 5px;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+.files {
+  background-color: red;
+  border-radius: 3px;
+}
+
+.files input {
+  background-color: transparent;
+  border: none;
+}
+
+.specialSize {
+  background-color: red;
+  border-radius: 3px;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+}
+
+.specialSize input {
+  width: 63px;
+  background-color: white;
+  color: black;
+}
+
+.listButtons {
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] max-content [col-end]);
+  column-gap: 5px;
+}
+
+.listButtons button {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 80px max-content;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, [col-start] 100% [col-end]);
+
+    padding: 10px;
+  }
+
+  .managementGrid {
+    grid-template-columns: 1fr;
+    row-gap: 10px;
+  }
+
+  .optionGrid {
+    grid-template-columns: max-content max-content;
+  }
+
+  .data {
+    grid-template-columns: 1fr;
+  }
+
+  .options {
+    grid-template-columns: repeat(2, [col-start] max-content [col-end]);
+  }
+
+  .ordersFirstGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ordersSecondGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sizesGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .listButtons {
+    grid-template-columns: max-content 1fr 1fr;
+  }
+
+  .search {
+    grid-template-columns: auto max-content;
+  }
+}

@@ -1,0 +1,40 @@
+.container {
+  padding-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, [col-start] 100% [col-end]);
+
+  column-gap: 10px;
+  row-gap: 10px;
+
+  justify-content: center;
+}
+
+.box {
+  background-color: #c7c7c7;
+
+  height: max-content;
+
+  overflow: auto;
+}
+
+.box .boxTitle {
+  display: grid;
+  grid-template-columns: auto max-content;
+
+  background-color: #414141;
+  color: white;
+
+  cursor: pointer;
+}
+
+.box p {
+  padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+}

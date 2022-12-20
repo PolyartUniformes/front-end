@@ -1,0 +1,8 @@
+{
+  "masculina": "PP,P,M,G,GG,XG,EG,EG1,EG2,EG3",
+  "feminina": "PPBL,PBL,MBL,GBL,GGBL,XGBL,EGBL,EG1BL,EG2BL,EG3BL",
+  "infantil": "0A,2A,4A,PI,MI,GI,-,-,-,-",
+  "calca": "34,36,38,40,42,44,46,48,50,52",
+  "unico": "UNC,-,-,-,-,-,-,-,-,-",
+  "unisex": "PP,P,M,G,GG,XG,EG,EG1,EG2,EG3,PPBL,PBL,MBL,GBL,GGBL,XGBL,EGBL,EG1BL,EG2BL,EG3BL,0A,2A,4A,PI,MI,GI,-,-,-,-"
+}

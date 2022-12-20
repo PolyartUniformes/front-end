@@ -1,0 +1,14 @@
+[
+  { "code": 5, "name": "Aprovando" },
+  { "code": 6, "name": "Compras" },
+  { "code": 7, "name": "Corte" },
+  { "code": 8, "name": "Separação" },
+  { "code": 9, "name": "Silk" },
+  { "code": 10, "name": "Bordado" },
+  { "code": 11, "name": "Bordado 3º" },
+  { "code": 12, "name": "Costura" },
+  { "code": 13, "name": "Facção" },
+  { "code": 14, "name": "Acabamento" },
+  { "code": 15, "name": "Finalizado" },
+  { "code": 16, "name": "Entregue" }
+]

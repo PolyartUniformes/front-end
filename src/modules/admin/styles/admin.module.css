@@ -1,0 +1,125 @@
+.container {
+  padding-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, [col-start] max-content [col-end]);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.box {
+  background-color: #c7c7c7;
+}
+
+.title {
+  background-color: #1d1d1d;
+  color: white;
+
+  padding: 5px;
+
+  font-weight: bold;
+}
+
+.content {
+  padding: 5px;
+  display: grid;
+  row-gap: 10px;
+}
+
+.content input {
+  width: 100%;
+}
+
+.mainContent .managementRoles {
+  display: grid;
+  grid-template-columns: max-content max-content;
+
+  column-gap: 5px;
+}
+
+.mainContent .rolesGrid {
+  display: grid;
+  grid-template-columns: max-content max-content;
+
+  column-gap: 5px;
+}
+
+.saveButton {
+  display: grid;
+  grid-template-rows: max-content max-content;
+
+  text-align: center;
+}
+
+.saveButton button {
+  background-color: #009a00;
+  color: white;
+
+  border-radius: 5px;
+  border: none;
+}
+
+.saveButton button:hover {
+  background-color: #00a500;
+}
+
+.submenu {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+
+  padding: 5px;
+}
+
+.submenu button {
+  display: flex;
+
+  align-items: center;
+}
+
+.selection {
+  display: grid;
+  grid-template-columns: max-content auto;
+  column-gap: 5px;
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  row-gap: 10px;
+
+  margin-top: 10px;
+}
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, [col-start] 100% [col-end]);
+    padding: 10px;
+    width: 100%;
+  }
+
+  .mainContent .managementGrid {
+    grid-template-columns: auto;
+    row-gap: 10px;
+  }
+
+  .mainContent .rolesGrid {
+    grid-template-columns: max-content;
+  }
+
+  .data {
+    grid-template-columns: 1fr;
+  }
+
+  .roles {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

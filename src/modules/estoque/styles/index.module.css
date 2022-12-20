@@ -1,0 +1,15 @@
+.main {
+  width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    width: 100%;
+  }
+}

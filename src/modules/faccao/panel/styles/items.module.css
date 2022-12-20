@@ -1,0 +1,33 @@
+.items {
+  margin-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5px;
+}
+
+.inputsBox {
+  display: grid;
+  grid-template-rows: max-content max-content max-content max-content;
+  row-gap: 5px;
+}
+
+.inputs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.inputs input {
+  width: 100%;
+}
+
+.items img {
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .items {
+    grid-template-columns: 1fr;
+    row-gap: 5px;
+  }
+}

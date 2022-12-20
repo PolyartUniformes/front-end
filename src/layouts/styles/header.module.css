@@ -1,0 +1,92 @@
+.container {
+  display: grid;
+  grid-template-rows: auto auto;
+
+  width: 1fr;
+
+  position: relative;
+
+  background-color: black;
+}
+
+.buttonsContainer {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, [col-start] 37px [col-end]);
+
+  height: max-content;
+
+  position: relative;
+
+  background-color: #fffffff1;
+}
+
+.container .button {
+  padding: 10px;
+
+  color: black;
+
+  border-radius: 0;
+  border: none;
+
+  width: 100%;
+
+  background-color: transparent;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+
+  align-items: center;
+}
+
+.container .selected {
+  padding: 10px;
+
+  border-radius: 0;
+  border: none;
+
+  width: 100%;
+
+  background-color: #a0a0a0;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+
+  align-items: center;
+}
+
+.container .button:hover {
+  background-color: #a0a0a0;
+}
+
+.menu {
+  padding: 10px;
+
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #363636;
+  background-color: transparent;
+  color: white;
+
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 5px;
+
+  align-items: center;
+}
+
+.menu:hover {
+  color: #a0a0a0;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 900px) {
+  .menu {
+    width: 100%;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+  }
+}

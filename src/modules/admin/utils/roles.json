@@ -1,0 +1,50 @@
+[
+  {
+    "id": 0,
+    "value": "catalogo",
+    "name": "Catálogo",
+    "description": "Acesso a criação, edição e remoção de itens do catálogo."
+  },
+  {
+    "id": 1,
+    "value": "ordemdecorte",
+    "name": "Ordem de corte",
+    "description": "Acesso a criação, edição e remoção de ordens de corte."
+  },
+  {
+    "id": 2,
+    "value": "ordemdecompra",
+    "name": "Ordem de compra",
+    "description": "Acesso a criação, edição e remoção de ordens de compra."
+  },
+  {
+    "id": 3,
+    "value": "mapa",
+    "name": "Mapa",
+    "description": "Acesso a criação e edição de mapas."
+  },
+  {
+    "id": 4,
+    "value": "estoque",
+    "name": "Estoque",
+    "description": "Acesso a criação, edição e remoção de itens do catálogo."
+  },
+  {
+    "id": 5,
+    "value": "faccao",
+    "name": "Facção",
+    "description": "Acesso ao gerenciamento de ordens para os faccionistas."
+  },
+  {
+    "id": 6,
+    "value": "faccionista",
+    "name": "Faccionista",
+    "description": "Acesso a área do faccionista."
+  },
+  {
+    "id": 8,
+    "value": "admin",
+    "name": "Admin",
+    "description": "Acesso a tudo."
+  }
+]
