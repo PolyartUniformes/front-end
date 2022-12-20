@@ -1,0 +1,14 @@
+.container {
+  padding-top: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, [col-start] max-content [col-end]);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.box {
+  background-color: #c7c7c7;
+  height: fit-content;
+}

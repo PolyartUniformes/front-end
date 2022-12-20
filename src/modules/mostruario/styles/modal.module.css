@@ -1,0 +1,33 @@
+.item {
+  display: grid;
+  grid-template-columns: auto 50px 50px;
+}
+
+.centeredInput {
+  text-align: center;
+}
+
+.modalContent {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  row-gap: 5px;
+}
+
+.modalHeader {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  justify-content: center;
+  column-gap: 5px;
+}
+
+.modalHeader button {
+  width: 100px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}

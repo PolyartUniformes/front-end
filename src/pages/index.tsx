@@ -5,5 +5,6 @@ import { Faccao } from "../modules/faccao/index";
 import { OrdensDeCorte } from "../modules/ordens/corte/index";
 import { Mapa } from "../modules/mapa";
 import { Estoque } from "../modules/estoque";
+import { Mostruario } from "./mostruario";
 
-export { Home, Login, Admin, Faccao, OrdensDeCorte, Mapa, Estoque };
+export { Home, Login, Admin, Faccao, OrdensDeCorte, Mapa, Estoque, Mostruario };

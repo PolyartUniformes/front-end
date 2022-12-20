@@ -8,6 +8,7 @@ import {
   OrdensDeCorte,
   Mapa,
   Estoque,
+  Mostruario,
 } from "./pages";
 
 function App() {
@@ -28,6 +29,11 @@ function App() {
         <Route path="/mapa" element={<AuthProvider chlid={<Mapa />} />} />
 
         <Route path="/estoque" element={<AuthProvider chlid={<Estoque />} />} />
+
+        <Route
+          path="/mostruario"
+          element={<AuthProvider chlid={<Mostruario />} />}
+        />
 
         <Route path="/login" element={<Login />} />
       </Routes>
