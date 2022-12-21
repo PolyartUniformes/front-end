@@ -1,0 +1,42 @@
+.title {
+  background-color: #1d1d1d;
+  color: white;
+
+  padding: 5px;
+
+  font-weight: bold;
+
+  display: grid;
+  grid-template-columns: auto 30px;
+}
+
+.cadastro {
+  padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 10px;
+}
+
+.doisinput {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+}
+
+.item {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  text-align: center;
+}
+
+.cincoinput {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+}
+
+.cadastro button {
+  background-color: limegreen;
+}
+
+.cadastro button:hover {
+  background-color: lime;
+}
