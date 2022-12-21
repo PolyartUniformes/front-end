@@ -29,8 +29,6 @@ const buttons = [
 
   { pathname: "/mapa", name: "mapa", icon: <BsMap size={17} /> },
 
-  { pathname: "/catalogo", name: "catálogo", icon: <BsGrid3X3Gap size={17} /> },
-
   { pathname: "/estoque", name: "estoque", icon: <BsInboxes size={17} /> },
 
   {
