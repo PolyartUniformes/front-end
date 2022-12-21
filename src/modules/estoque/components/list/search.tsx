@@ -31,6 +31,14 @@ const Search = () => {
           </button>
         </div>
       </div>
+      <div className={styles.cabecalho}>
+        <p>ID</p>
+        <p>TECIDO</p>
+        <p>COR</p>
+        <p>COMPOSIÇÃO</p>
+        <p>QNTD</p>
+        <p>LGR</p>
+      </div>
       <Middleware update={update} value={value} />
     </div>
   );
