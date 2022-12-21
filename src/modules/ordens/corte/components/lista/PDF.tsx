@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
     backgroundColor: "white",
-    padding: 3,
   },
   title: {
     textAlign: "center",
@@ -21,7 +20,6 @@ const styles = StyleSheet.create({
     backgroundColor: "limegreen",
     borderBottom: "1px solid black",
     fontSize: "10px",
-    padding: 2,
   },
   section: {
     border: "1px solid black",
@@ -36,7 +34,7 @@ const styles = StyleSheet.create({
   },
   rowSection: {
     border: "1px solid black",
-    padding: 2,
+    padding: 1,
     fontWeight: "bold",
     backgroundColor: "gray",
     textAlign: "center",
@@ -47,7 +45,7 @@ const styles = StyleSheet.create({
   },
   columnSection: {
     border: "1px solid black",
-    padding: 2,
+    padding: 1,
     textAlign: "center",
     fontSize: "10px",
     marginLeft: 1,
@@ -114,6 +112,16 @@ const styles = StyleSheet.create({
 
 type Element = {
   element: DataJSON;
+};
+
+const handleLayout = (image: string) => {
+  if (image) {
+    if (image.includes("cloudinary")) {
+      return image;
+    } else {
+      return `https://ngaolrcpscllqpabwqkx.supabase.co/storage/v1/object/public/polyart/${image}`;
+    }
+  }
 };
 
 const MyDocument = ({ element }: Element) => (
@@ -269,32 +277,36 @@ const MyDocument = ({ element }: Element) => (
           ) : null}
         </View>
 
-        <View style={styles.rowOne}>
-          <View style={styles.content}>
-            <View style={styles.rowSection}>
-              <Text>DESCRIÇÃO</Text>
-            </View>
-            <View style={styles.columnSection}>
-              <Text>{element.description}</Text>
+        {element.description ? (
+          <View style={styles.rowOne}>
+            <View style={styles.content}>
+              <View style={styles.rowSection}>
+                <Text>DESCRIÇÃO</Text>
+              </View>
+              <View style={styles.columnSection}>
+                <Text>{element.description}</Text>
+              </View>
             </View>
           </View>
-        </View>
+        ) : null}
 
-        <View style={styles.rowOne}>
-          <View style={styles.content}>
-            <View style={styles.rowSection}>
-              <Text>OBSERVAÇÃO</Text>
-            </View>
-            <View style={styles.columnSection}>
-              <Text>{element.observation}</Text>
+        {element.observation ? (
+          <View style={styles.rowOne}>
+            <View style={styles.content}>
+              <View style={styles.rowSection}>
+                <Text>OBSERVAÇÃO</Text>
+              </View>
+              <View style={styles.columnSection}>
+                <Text>{element.observation}</Text>
+              </View>
             </View>
           </View>
-        </View>
+        ) : null}
 
         {/* Início da quarta row */}
 
         {element.image_path ? (
-          <Image style={styles.layout} src={element.image_path} />
+          <Image style={styles.layout} src={handleLayout(element.image_path)} />
         ) : null}
 
         {element.size_type === "" ? null : element.size_type === "UNISEX" ? (

@@ -1,7 +1,9 @@
-import { Grid, Modal } from "semantic-ui-react";
+import { Modal } from "semantic-ui-react";
 import { ChangeEvent, useState, useEffect } from "react";
 import styles from "../styles/modal.module.css";
 import { mostruario } from "../functions/mostruario";
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import MyDocument from "./PDF";
 
 const ModalMostruario = ({ element }: any) => {
   const [open, setOpen] = useState(false);
@@ -27,7 +29,9 @@ const ModalMostruario = ({ element }: any) => {
 
   const [values, setValues] = useState({});
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const name = event.target.name;
     const value = event.target.value.toUpperCase();
 
@@ -122,6 +126,21 @@ const ModalMostruario = ({ element }: any) => {
     setEditMode(null);
   };
 
+  const sum = parseInt(element.itens) - parseInt(element.alugado);
+
+  function DownloadPDF({ cliente }: any) {
+    return (
+      <button className={styles.modalActionsButton}>
+        <PDFDownloadLink
+          document={<MyDocument element={element} cliente={cliente} />}
+          fileName={`${element.code}.pdf`}
+        >
+          📥
+        </PDFDownloadLink>
+      </button>
+    );
+  }
+
   return (
     <Modal
       className={styles.modal}
@@ -135,8 +154,14 @@ const ModalMostruario = ({ element }: any) => {
           <input type="text" value={element.code} readOnly />
           <input
             type="text"
-            style={{ textAlign: "center" }}
-            value={`${element.itens} de ${element.alugado}`}
+            className={
+              sum === 0
+                ? styles.alugado
+                : sum > 0 && sum < element.alugado
+                ? styles.parcial
+                : styles.disponivel
+            }
+            value={`${element.alugado} de ${element.itens}`}
             readOnly
           />
         </div>
@@ -214,7 +239,7 @@ const ModalMostruario = ({ element }: any) => {
                   />
                   <div>
                     {cliente.length > 0 ? (
-                      <div>
+                      <div className={styles.buttonsGrid}>
                         <button
                           onClick={() => handleEdit(index, element.id)}
                           style={{
@@ -227,17 +252,19 @@ const ModalMostruario = ({ element }: any) => {
                         </button>
                         {cliente.map((e: any, i: number) => {
                           return e.pecas.includes(element.id) ? (
-                            <button
-                              key={i}
-                              onClick={() => handleSeeClient(index, e)}
-                              style={{
-                                backgroundColor: "white",
-                                display: "flex",
-                                alignItems: "center",
-                              }}
-                            >
-                              🪪
-                            </button>
+                            <div key={i} className={styles.buttonsGrid2}>
+                              <button
+                                onClick={() => handleSeeClient(index, e)}
+                                style={{
+                                  backgroundColor: "white",
+                                  display: "flex",
+                                  alignItems: "center",
+                                }}
+                              >
+                                🪪
+                              </button>
+                              <DownloadPDF cliente={e} />
+                            </div>
                           ) : null;
                         })}
                       </div>
@@ -489,6 +516,15 @@ const ModalMostruario = ({ element }: any) => {
                   onChange={(e) => handleChange(e)}
                 />
               </div>
+            </div>
+            <div className={styles.rentInputBox}>
+              <label>DETALHES</label>
+              <textarea
+                name="detalhes"
+                cols={30}
+                rows={3}
+                onChange={(e) => handleChange(e)}
+              />
             </div>
             <div className={styles.rentItems}>
               {data.map((element: any, index: number) => {

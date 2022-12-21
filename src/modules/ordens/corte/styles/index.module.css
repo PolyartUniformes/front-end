@@ -10,7 +10,6 @@
 
 .box {
   background-color: #c7c7c7;
-  height: fit-content;
 }
 
 @media screen and (max-width: 900px) {

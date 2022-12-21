@@ -27,12 +27,22 @@
 
 .itemsGrid {
   display: grid;
-  grid-template-rows: max-content max-content;
+  grid-template-rows: max-content max-content max-content;
+}
+
+.buttonsGrid {
+  display: grid;
+  grid-template-columns: 25px 50px;
+}
+
+.buttonsGrid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 25px);
 }
 
 .items {
   display: grid;
-  grid-template-columns: 35px auto 50px 25px;
+  grid-template-columns: 35px auto 50px 75px;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -93,6 +103,16 @@
 .alugado {
   text-align: center;
   background-color: red;
+}
+
+.parcial {
+  text-align: center;
+  background-color: yellow;
+}
+
+.disponivel {
+  text-align: center;
+  background-color: limegreen;
 }
 
 .nalugado {
