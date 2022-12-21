@@ -1,6 +1,6 @@
 .item {
   display: grid;
-  grid-template-columns: auto 50px 50px;
+  grid-template-columns: auto 70px;
 }
 
 .centeredInput {
@@ -9,8 +9,9 @@
 
 .modalContent {
   display: grid;
-  grid-template-rows: max-content max-content;
+  grid-template-rows: max-content max-content max-content;
   row-gap: 5px;
+  padding-bottom: 10px;
 }
 
 .modalHeader {
@@ -24,10 +25,93 @@
   width: 100px;
 }
 
+.itemsGrid {
+  display: grid;
+  grid-template-rows: max-content max-content;
+}
+
 .items {
   display: grid;
-  grid-template-columns: 50px auto 50px;
+  grid-template-columns: 35px auto 50px 25px;
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.editItems {
+  display: grid;
+  grid-template-columns: 35px auto 50px 25px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rentGrid {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  row-gap: 10px;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rentGrid button {
+  background-color: lime;
+}
+
+.rentGrid button:hover {
+  background-color: limegreen;
+}
+
+.rentInputs {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+}
+
+.rentItems {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+
+.rentCheckbox {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 10px;
+  color: white;
+}
+
+.rentInputBox {
+  display: grid;
+  grid-template-rows: max-content max-content;
+}
+
+.rentInputBox label {
+  text-align: center;
+  color: white;
+}
+
+.alugado {
+  text-align: center;
+  background-color: red;
+}
+
+.nalugado {
+  text-align: center;
+  background-color: limegreen;
+}
+
+.rentInputs2 {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  width: 1000px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #dddddd;
+  padding: 10px;
+}
+
+.rentInputs2 label {
+  color: black;
 }
