@@ -48,6 +48,8 @@ export default function Items({ items, value, itemsLimit }: Item) {
       <div className={styles.desktopList}>
         {items &&
           items.map((e, i) => {
+            const sum = e.sizes.split(",").reduce((x, y) => x + parseInt(y), 0);
+
             return (
               <div key={e.main_code}>
                 <div
@@ -102,7 +104,7 @@ export default function Items({ items, value, itemsLimit }: Item) {
                       <input
                         className={styles.item}
                         type="text"
-                        value={e.quantity || ""}
+                        value={sum || ""}
                         readOnly
                       />
                     </div>

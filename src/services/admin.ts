@@ -29,6 +29,11 @@ class Admin {
     const data = await response.json();
     return alert(data);
   }
+
+  async me(uuid: string) {
+    const response = await post("admin/me/", { uuid });
+    return await response.json();
+  }
 }
 
 const admin = new Admin();

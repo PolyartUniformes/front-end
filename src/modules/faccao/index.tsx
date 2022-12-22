@@ -4,19 +4,38 @@ import { Create } from "./components/create";
 import styles from "./styles/index.module.css";
 import Panel from "./panel/main";
 
+import { useEffect, useState } from "react";
+import { admin } from "../../services/admin";
+
 export function Faccao() {
+  const [roles, setRoles] = useState("");
+
+  const uuid = localStorage.getItem("uuid");
+
+  useEffect(() => {
+    if (uuid) {
+      const api = async () => {
+        const data = await admin.me(uuid);
+        setRoles(data.roles);
+      };
+      api();
+    }
+  }, []);
+
   return (
     <div className="nav">
       <Header />
-      <div className={styles.container}>
-        <div className={styles.box}>
-          <List />
-        </div>
+      {roles.includes("faccionista") ? null : (
+        <div className={styles.container}>
+          <div className={styles.box}>
+            <List />
+          </div>
 
-        <div className={styles.box}>
-          <Create />
+          <div className={styles.box}>
+            <Create />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={styles.subContainer}>
         <div className={styles.box}>

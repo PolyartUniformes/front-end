@@ -9,6 +9,9 @@ function AuthProvider({ chlid }: any) {
     async function token() {
       const res = await me();
       setToken(res.ok);
+
+      const data = await res.json();
+      localStorage.setItem("uuid", data.uuid);
     }
     token();
   }, []);

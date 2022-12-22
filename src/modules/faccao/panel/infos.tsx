@@ -4,6 +4,7 @@ import { useEffect, useState, ChangeEvent } from "react";
 import { faccionistas, getServices, getData } from "../utils/get";
 import { Faction, User } from "../../../utils/types";
 import Pagination from "./pagination";
+import { admin } from "../../../services/admin";
 
 type UserObject = {
   wallet: string;
@@ -83,18 +84,38 @@ export default function Infos() {
     });
   };
 
+  const [roles, setRoles] = useState("");
+  const [name, setName] = useState("");
+
+  const uuid = localStorage.getItem("uuid");
+
+  useEffect(() => {
+    if (uuid) {
+      const api = async () => {
+        const data = await admin.me(uuid);
+        setRoles(data.roles);
+        setName(data.name);
+      };
+      api();
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.inputs}>
         <select onChange={(e) => handleSelect(e)}>
           <option value="">Selecione</option>
-          {users.map((element, index) => {
-            return (
-              <option key={index} value={element.name}>
-                {element.name}
-              </option>
-            );
-          })}
+          {roles.includes("faccionista") ? (
+            <option value={name}>{name}</option>
+          ) : (
+            users.map((element, index) => {
+              return (
+                <option key={index} value={element.name}>
+                  {element.name}
+                </option>
+              );
+            })
+          )}
         </select>
 
         <input
