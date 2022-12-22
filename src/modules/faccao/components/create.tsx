@@ -1,7 +1,7 @@
 import styles from "../styles/create.module.css";
 import { useState, useEffect, ChangeEvent } from "react";
 import { Data, Faction, User } from "../../../utils/types";
-import { faccionistas, getData } from "../utils/get";
+import { faccionistas, getItems } from "../utils/get";
 import { create } from "../../../services/orders";
 
 function Create() {
@@ -11,7 +11,7 @@ function Create() {
 
   useEffect(() => {
     const get = async () => {
-      setData(await getData());
+      setData(await getItems());
       setUsers(await faccionistas());
     };
     get();

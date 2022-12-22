@@ -1,4 +1,5 @@
 import { getUsers } from "../../../services/admin";
+import { get, post } from "../../../services/api";
 import { getFactionList, getList } from "../../../services/orders";
 import { DataJSON } from "../../../utils/types";
 
@@ -23,4 +24,9 @@ const getServices = async () => {
   return await res.json();
 };
 
-export { getData, faccionistas, getServices };
+const getItems = async () => {
+  const res = await get("ordem-de-corte/getitems/");
+  return await res.json();
+};
+
+export { getData, faccionistas, getServices, getItems };

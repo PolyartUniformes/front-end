@@ -25,8 +25,34 @@ class Mostruario {
     return data;
   }
 
+  async filterchild(value: string) {
+    const response = await get("mostruario/listchild/");
+    const data = await response.json();
+
+    let result = [];
+
+    if (value) {
+      return data.filter((element: any) => {
+        if (!element.id.search(value)) {
+          return result.push(element);
+        } else if (!element.item.search(value)) {
+          return result.push(element);
+        } else {
+          return null;
+        }
+      });
+    }
+
+    return data;
+  }
+
   async create(element: any) {
     const response = await post("mostruario/create/", { element });
+    return await response.json();
+  }
+
+  async getParentsData() {
+    const response = await get("mostruario/getparents/");
     return await response.json();
   }
 

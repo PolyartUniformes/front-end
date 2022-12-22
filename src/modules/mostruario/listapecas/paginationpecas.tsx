@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
-import { Items } from "./items";
+import { Items } from "./itemspecas";
 
-export default function Pagination({ data }: any) {
+export default function Pagination({ data, parents }: any) {
   const [itemOffset, setItemOffset] = useState(0);
 
-  const endOffset = itemOffset + 200;
+  const endOffset = itemOffset + 20;
   const items = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / 200);
+  const pageCount = Math.ceil(data.length / 20);
 
   const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * 200) % data.length;
+    const newOffset = (event.selected * 20) % data.length;
     setItemOffset(newOffset);
   };
 
   return (
     <div style={{ display: "grid", gridTemplateRows: "auto max-content" }}>
-      <Items items={items} />
+      <Items items={items} parents={parents} />
       <ReactPaginate
         className="pagination"
         activeClassName="activePage"

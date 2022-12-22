@@ -1,15 +1,15 @@
 import styles from "../styles/list.module.css";
-import { Search } from "./search";
+import { Search } from "./searchpecas";
 
-const MostruarioList = () => {
+const MostruarioListPecas = () => {
   return (
     <div className={styles.content}>
       <div className={styles.title}>
-        <p>LISTA DE LOTES</p>
+        <p>LISTA DE PEÇAS</p>
       </div>
       <Search />
     </div>
   );
 };
 
-export { MostruarioList };
+export { MostruarioListPecas };

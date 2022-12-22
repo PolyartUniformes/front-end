@@ -1,6 +1,6 @@
 .item {
   display: grid;
-  grid-template-columns: auto 70px;
+  grid-template-columns: auto 100px;
 }
 
 .centeredInput {
@@ -134,4 +134,14 @@
 
 .rentInputs2 label {
   color: black;
+}
+
+.atrasado {
+  background-color: red;
+  text-align: center;
+}
+
+.naoatrasado {
+  background-color: limegreen;
+  text-align: center;
 }

@@ -8,6 +8,7 @@ import { admin } from "../../../services/admin";
 const EditUser = () => {
   const [employees, setEmployees] = useState<any>([]);
   const [values, setValues] = useState({});
+  const [roles, setRoles] = useState<string[]>([]);
 
   useEffect(() => {
     const handleUsers = async () => {
@@ -28,6 +29,22 @@ const EditUser = () => {
 
     setValues(newValues);
   };
+
+  function addRole(event: ChangeEvent<HTMLInputElement>) {
+    let rolesList = [...roles];
+
+    if (event.target.checked) {
+      rolesList = [...roles, event.target.value];
+    } else {
+      rolesList.splice(roles.indexOf(event.target.value), 1);
+    }
+
+    setRoles(rolesList);
+
+    setValues({ ...values, ["roles"]: rolesList.toString() });
+  }
+
+  console.log(values);
 
   return (
     <div className={styles.content}>
@@ -78,7 +95,11 @@ const EditUser = () => {
           {role.map((e, i) => {
             return (
               <div key={i} className={styles.managementRoles}>
-                <input type="checkbox" value={e.value} />
+                <input
+                  type="checkbox"
+                  value={e.value}
+                  onChange={(event) => addRole(event)}
+                />
                 <p>{e.name}</p>
               </div>
             );

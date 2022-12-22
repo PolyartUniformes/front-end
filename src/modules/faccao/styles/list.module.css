@@ -28,6 +28,8 @@
 
 .listBox {
   padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
 }
 
 .listButtons {
@@ -52,6 +54,12 @@
   grid-template-columns: 50px auto 67px;
 }
 
+.labelinput {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  text-align: center;
+}
+
 .delivered {
   background-color: rgb(79, 255, 79);
   border: 1px solid green;
@@ -63,7 +71,6 @@
 }
 
 .firstRow {
-  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }

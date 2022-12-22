@@ -73,7 +73,7 @@
 
 .listedGrid {
   display: grid;
-  grid-template-columns: 50px 200px 200px auto 80px 50px;
+  grid-template-columns: 50px 330px 330px 400px 80px 50px;
 }
 
 .listedGrid input {
@@ -88,7 +88,7 @@
 
 .listedGridSelected {
   display: grid;
-  grid-template-columns: 50px 200px 200px auto 80px 50px;
+  grid-template-columns: 50px 330px 330px 400px 80px 50px;
 }
 
 .listedGridSelected input {

@@ -57,61 +57,82 @@ export default function Items({ items, value, itemsLimit }: Item) {
                   }}
                 >
                   <div className={styles.firstRow}>
-                    <input
-                      className={styles.item}
-                      type="text"
-                      value={e.main_code || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>ID</label>
+                      <input
+                        className={styles.item}
+                        type="text"
+                        value={e.main_code || ""}
+                        readOnly
+                      />
+                    </div>
 
-                    <input
-                      className={styles.item}
-                      type="text"
-                      value={e.sub_code || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>Nº PEDIDO</label>
+                      <input
+                        className={styles.item}
+                        type="text"
+                        value={e.sub_code || ""}
+                        readOnly
+                      />
+                    </div>
 
-                    <input
-                      className={styles.item}
-                      type="text"
-                      value={e.seller || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>VENDEDOR</label>
+                      <input
+                        className={styles.item}
+                        type="text"
+                        value={e.seller || ""}
+                        readOnly
+                      />
+                    </div>
 
-                    <input
-                      className={styles.item}
-                      type="text"
-                      value={e.line_type || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>LINHA</label>
+                      <input
+                        className={styles.item}
+                        type="text"
+                        value={e.line_type || ""}
+                        readOnly
+                      />
+                    </div>
 
-                    <input
-                      className={styles.item}
-                      type="text"
-                      value={e.quantity || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>QNTD</label>
+                      <input
+                        className={styles.item}
+                        type="text"
+                        value={e.quantity || ""}
+                        readOnly
+                      />
+                    </div>
 
-                    <input
-                      type="text"
-                      className={
-                        e.status === 16
-                          ? styles.delivered
-                          : isLate(e.deliver_in)
-                          ? styles.isLate
-                          : ""
-                      }
-                      value={dateChange(e.deliver_in) || ""}
-                      readOnly
-                    />
+                    <div className={styles.labelinput}>
+                      <label>ENTREGA</label>
+                      <input
+                        type="text"
+                        className={
+                          e.status === 16
+                            ? styles.delivered
+                            : isLate(e.deliver_in)
+                            ? styles.isLate
+                            : ""
+                        }
+                        value={dateChange(e.deliver_in) || ""}
+                        readOnly
+                      />
+                    </div>
                   </div>
 
-                  <input
-                    type="text"
-                    readOnly
-                    value={e.client || ""}
-                    className={styles.item}
-                  />
+                  <div className={styles.labelinput}>
+                    <label>CLIENTE</label>
+                    <input
+                      type="text"
+                      readOnly
+                      value={e.client || ""}
+                      className={styles.item}
+                    />
+                  </div>
 
                   <img
                     style={{ width: "100%" }}
@@ -120,21 +141,27 @@ export default function Items({ items, value, itemsLimit }: Item) {
                   />
 
                   {e.description ? (
-                    <textarea
-                      readOnly
-                      value={e.description || ""}
-                      cols={30}
-                      rows={3}
-                    />
+                    <div className={styles.labelinput}>
+                      <label>DESCRIÇÃO</label>
+                      <textarea
+                        readOnly
+                        value={e.description || ""}
+                        cols={30}
+                        rows={3}
+                      />
+                    </div>
                   ) : null}
 
                   {e.observation ? (
-                    <textarea
-                      readOnly
-                      value={e.observation || ""}
-                      cols={30}
-                      rows={3}
-                    />
+                    <div className={styles.labelinput}>
+                      <label>OBSERVAÇÃO</label>
+                      <textarea
+                        readOnly
+                        value={e.observation || ""}
+                        cols={30}
+                        rows={3}
+                      />
+                    </div>
                   ) : null}
                 </div>
               </div>
