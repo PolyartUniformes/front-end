@@ -39,7 +39,7 @@ export default function Header() {
       };
       api();
     }
-  }, []);
+  }, [expanded]);
 
   return (
     <header className={styles.container}>
@@ -47,47 +47,54 @@ export default function Header() {
         <BsJustify size={17} /> MENU
       </button>
 
-      {roles && roles.indexOf("faccionista")
-        ? expanded && (
-            <div className={styles.buttonsContainer}>
-              <button
-                className={"/" === pathname ? styles.selected : styles.button}
-                onClick={() => (location.href = "/")}
-              >
-                <BsHouse size={17} /> HOME
-              </button>
-              <button
-                className={
-                  "/faccao" === pathname ? styles.selected : styles.button
-                }
-                onClick={() => (location.href = "/faccao")}
-              >
-                <BsJournalText size={17} /> FACÇÃO
-              </button>
-            </div>
-          )
-        : expanded && (
-            <div className={styles.buttonsContainer}>
-              {buttons.map((element: Buttons, index: number) => {
-                return (
-                  <button
-                    key={index}
-                    className={
-                      element.pathname === pathname
-                        ? styles.selected
-                        : styles.button
-                    }
-                    onClick={() => (location.href = element.pathname)}
-                  >
-                    {element.icon} {element.name.toUpperCase()}
-                  </button>
-                );
-              })}
-              <button className={styles.button} onClick={handleLogout}>
-                <BsDoorOpen size={17} /> SAIR
-              </button>
-            </div>
-          )}
+      {roles === "" ? (
+        <div />
+      ) : roles.includes("faccionista") ? (
+        expanded && (
+          <div className={styles.buttonsContainer}>
+            <button
+              className={"/" === pathname ? styles.selected : styles.button}
+              onClick={() => (location.href = "/")}
+            >
+              <BsHouse size={17} /> HOME
+            </button>
+            <button
+              className={
+                "/faccao" === pathname ? styles.selected : styles.button
+              }
+              onClick={() => (location.href = "/faccao")}
+            >
+              <BsJournalText size={17} /> FACÇÃO
+            </button>
+            <button className={styles.button} onClick={handleLogout}>
+              <BsDoorOpen size={17} /> SAIR
+            </button>
+          </div>
+        )
+      ) : (
+        expanded && (
+          <div className={styles.buttonsContainer}>
+            {buttons.map((element: Buttons, index: number) => {
+              return (
+                <button
+                  key={index}
+                  className={
+                    element.pathname === pathname
+                      ? styles.selected
+                      : styles.button
+                  }
+                  onClick={() => (location.href = element.pathname)}
+                >
+                  {element.icon} {element.name.toUpperCase()}
+                </button>
+              );
+            })}
+            <button className={styles.button} onClick={handleLogout}>
+              <BsDoorOpen size={17} /> SAIR
+            </button>
+          </div>
+        )
+      )}
     </header>
   );
 }
