@@ -46,6 +46,43 @@ class Mostruario {
     return data;
   }
 
+  async getAllClients(value: any) {
+    const hook = await get("mostruario/getclients/");
+    const data = await hook.json();
+
+    let result = [];
+
+    if (value) {
+      return data.filter((element: any) => {
+        if (!element.id === value) {
+          return result.push(element);
+        } else if (!element.cliente.search(value)) {
+          return result.push(element);
+        } else if (!element.lote.search(value)) {
+          return result.push(element);
+        } else if (!element.item.search(value)) {
+          return result.push(element);
+        } else if (!element.documento.search(value)) {
+          return result.push(element);
+        } else {
+          return null;
+        }
+      });
+    }
+
+    return data;
+  }
+
+  async deleteClient(id: number) {
+    const hook = await post("mostruario/deleteclient/", { id });
+    return await hook.json();
+  }
+
+  async saveClient(element: any) {
+    const hook = await post("mostruario/saveclient/", { element });
+    return await hook.json();
+  }
+
   async create(element: any) {
     const response = await post("mostruario/create/", { element });
     return await response.json();

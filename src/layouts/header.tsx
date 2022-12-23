@@ -47,7 +47,7 @@ export default function Header() {
         <BsJustify size={17} /> MENU
       </button>
 
-      {roles.includes("faccionista")
+      {roles && roles.indexOf("faccionista")
         ? expanded && (
             <div className={styles.buttonsContainer}>
               <button

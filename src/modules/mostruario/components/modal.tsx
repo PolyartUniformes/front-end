@@ -61,6 +61,7 @@ const ModalMostruario = ({ element }: any) => {
   const handleRent = () => {
     setValues({
       uuid: element.uuid,
+      lote: element.code,
       qnt: element.itens,
       alugado: element.alugado,
     });
